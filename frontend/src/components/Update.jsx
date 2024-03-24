@@ -9,7 +9,7 @@ function Update() {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [previewImage, setPreviewImage] = useState(null);
-    const api_url = 'http://localhost:4000/api/card';
+    const api_url = import.meta.env.VITE_API
     useEffect(() => {
 
         const fetchData = async () => {

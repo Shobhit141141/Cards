@@ -7,7 +7,7 @@ function Create() {
     const [description, setDescription] = useState('')
     const [image, setImage] = useState('')
     const [previewImage, setPreviewImage] = useState(null); // New state for image preview
-    const api_url = 'http://localhost:4000/api/card';
+    const api_url =import.meta.env.VITE_API;
 
     const handleSubmit = async (e) => {
         e.preventDefault()

@@ -6,7 +6,7 @@ function Card() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState(null);
-    const api_url = 'http://localhost:4000/api/card';
+    const api_url = import.meta.env.VITE_API
 
     useEffect(() => {
         const fetchData = async () => {
@@ -54,20 +54,22 @@ function Card() {
         }
     };
 
-    
+
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="max-w-md mx-auto bg-white p-[30px] pt-4 rounded-md">
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex flex-col justify-between items-start mb-4 h-[80px] sm:flex-row">
                     <h2 className="text-2xl font-semibold">Card Details</h2>
 
-                    <button onClick={handleDelete} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300 translate-x-[40px]">Delete</button>
+                    <div className="w-[170px] flex justify-between" >
+                        <button onClick={handleDelete} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300 ">Delete</button>
 
 
-                    <Link to={`/Update/${id}`}>
-                        <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300">Update</button>
-                    </Link>
+                        <Link to={`/Update/${id}`}>
+                            <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300">Update</button>
+                        </Link>
+                    </div>
 
 
                 </div>

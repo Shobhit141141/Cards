@@ -5,7 +5,9 @@ import addicon from "/assets/add-icon.png";
 function Home() {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
-    const api_url = 'http://localhost:4000/api/card';
+    const api_url = import.meta.env.VITE_API
+
+    
 
     useEffect(() => {
         const fetchData = async () => {

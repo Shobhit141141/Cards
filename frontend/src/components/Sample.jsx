@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import addicon from "/assets/add-icon.png";
-
 function Sample() {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
-    const api_url = 'http://localhost:4000/api/card/65fea5df141c14018ee07cba';
+    const api_url = import.meta.env.VITE_API
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${api_url}`);
+                const response = await fetch(`${api_url}/65fea5df141c14018ee07cba`);
 
                 if (!response.ok) {
                     setLoading(false);
